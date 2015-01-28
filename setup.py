@@ -49,9 +49,9 @@ setup(
     author_email='filipeximenes@gmail.com',
     url='https://github.com/filipeximenes/tapioca-twitter',
     packages=[
-        'tapioca-twitter',
+        'tapioca_twitter',
     ],
-    package_dir={'tapioca-twitter':
+    package_dir={'tapioca_twitter':
                  'tapioca_twitter'},
     include_package_data=True,
     install_requires=requirements,
