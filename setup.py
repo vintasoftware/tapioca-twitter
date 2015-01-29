@@ -47,7 +47,7 @@ setup(
     long_description=readme,
     author='Filipe Ximenes',
     author_email='filipeximenes@gmail.com',
-    url='https://github.com/filipeximenes/tapioca-twitter',
+    url='https://github.com/vintasoftware/tapioca-twitter',
     packages=[
         'tapioca_twitter',
     ],
