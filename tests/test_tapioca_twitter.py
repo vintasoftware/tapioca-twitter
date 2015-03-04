@@ -8,7 +8,11 @@ from tapioca_twitter import Twitter
 class TestTapioca(unittest.TestCase):
 
     def setUp(self):
-        self.wrapper = Twitter()
+        self.wrapper = Twitter(
+            api_key='api_key',
+            api_secret='api_secret',
+            access_token='access_token',
+            access_token_secret='access_token_secret')
 
     def test_resource_access(self):
         resource = self.wrapper.statuses_mentions_timeline()
