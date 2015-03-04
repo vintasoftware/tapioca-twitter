@@ -1,28 +1,20 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
-test_tapioca_twitter
-----------------------------------
-
-Tests for `tapioca_twitter` module.
-"""
+# coding: utf-8
 
 import unittest
 
-from tapioca_twitter import tapioca_twitter
+from tapioca_twitter import Twitter
 
 
-class TestTapioca_twitter(unittest.TestCase):
+class TestTapioca(unittest.TestCase):
 
     def setUp(self):
-        pass
+        self.wrapper = Twitter()
 
-    def test_something(self):
-        pass
+    def test_resource_access(self):
+        resource = self.wrapper.statuses_mentions_timeline()
 
-    def tearDown(self):
-        pass
+        self.assertEqual(resource.data(), 'https://api.twitter.com/1.1/statuses/mentions_timeline.json')
+
 
 if __name__ == '__main__':
     unittest.main()

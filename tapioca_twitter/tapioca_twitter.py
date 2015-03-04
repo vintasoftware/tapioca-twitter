@@ -1,13 +1,14 @@
 # coding: utf-8
 
-from tapioca import (TapiocaClient, TapiocaAdapter)
+from tapioca import (
+    TapiocaAdapter, generate_wrapper_from_adapter)
 from requests_oauthlib import OAuth1
 
 from resource_mapping import RESOURCE_MAPPING
 
 
 class TwitterClientAdapter(TapiocaAdapter):
-    api_root = 'https://api.twitter.com/1.1'
+    api_root = 'https://api.twitter.com/1.1/'
     resource_mapping = RESOURCE_MAPPING
 
     def get_request_kwargs(self, api_params):
@@ -38,4 +39,4 @@ class TwitterClientAdapter(TapiocaAdapter):
             return iterator_request_kwargs
 
 
-Twitter = TapiocaClient(TwitterClientAdapter())
+Twitter = generate_wrapper_from_adapter(TwitterClientAdapter)

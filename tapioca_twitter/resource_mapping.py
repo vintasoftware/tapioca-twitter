@@ -2,7 +2,7 @@
 
 RESOURCE_MAPPING = {
     'statuses_mentions_timeline': {
-        'resource': '/statuses/mentions_timeline.json',
+        'resource': 'statuses/mentions_timeline.json',
         'docs': 'https://dev.twitter.com/rest/reference/get/statuses/mentions_timeline'
     },
     'statuses_user_timeline': {

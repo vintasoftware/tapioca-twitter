@@ -15,8 +15,8 @@ import sys
 package = 'tapioca_twitter'
 readme = open('README.rst').read()
 requirements = [
-    'tapioca-wrapper',
-    'requests_oauthlib',
+    'tapioca-wrapper==0.2.1',
+    'requests-oauthlib==0.4.2',
 ]
 test_requirements = [
 
@@ -51,8 +51,7 @@ setup(
     packages=[
         'tapioca_twitter',
     ],
-    package_dir={'tapioca_twitter':
-                 'tapioca_twitter'},
+    package_dir={'tapioca_twitter': 'tapioca_twitter'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
