@@ -12,8 +12,14 @@ import os
 import sys
 
 
+try:
+    import pypandoc
+    readme = pypandoc.convert('README.md', 'rst')
+except (IOError, ImportError):
+    readme = ''
+
+
 package = 'tapioca_twitter'
-readme = open('README.rst').read()
 requirements = [
     'tapioca-wrapper==0.2.1',
     'requests-oauthlib==0.4.2',
