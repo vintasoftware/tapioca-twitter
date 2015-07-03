@@ -28,7 +28,7 @@ class TwitterClientAdapter(TapiocaAdapter):
             return response_data['statuses']
 
     def get_iterator_next_request_kwargs(self,
-            iterator_request_kwargs, response_data):
+            iterator_request_kwargs, response_data, response):
         iterator_list = self.get_iterator_list(response_data)
         last_item = iterator_list[-1]
         if 'id' in last_item:
