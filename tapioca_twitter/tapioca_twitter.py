@@ -1,24 +1,26 @@
 # coding: utf-8
 
 from tapioca import (
-    TapiocaAdapter, generate_wrapper_from_adapter)
+    TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
 from requests_oauthlib import OAuth1
 
 from resource_mapping import RESOURCE_MAPPING
 
 
-class TwitterClientAdapter(TapiocaAdapter):
+class TwitterClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     api_root = 'https://api.twitter.com/1.1/'
     resource_mapping = RESOURCE_MAPPING
 
-    def get_request_kwargs(self, api_params):
-        client_key = api_params.get('api_key')
-        return {
-            'auth': OAuth1(client_key,
+    def get_request_kwargs(self, api_params, *args, **kwargs):
+        params = super(TwitterClientAdapter, self).get_request_kwargs(
+            api_params, *args, **kwargs)
+
+        params['auth'] = OAuth1(api_params.get('api_key'),
                 client_secret=api_params.get('api_secret'),
-                resource_owner_key=api_params.get('access_token'),
-                resource_owner_secret=api_params.get('access_token_secret'))
-        }
+                resource_owner_key=api_params.get('access_token', ''),
+                resource_owner_secret=api_params.get('access_token_secret', ''))
+
+        return params
 
     def get_iterator_list(self, response_data):
         if isinstance(response_data, list):
