@@ -25,6 +25,8 @@ api = Twitter(
 - datetime
 - Decimal
 
+## More
+
 - Learn how Tapioca works [here](http://tapioca-wrapper.readthedocs.org/en/stable/quickstart.html)
 - Explore this package using iPython
 - Have fun!
