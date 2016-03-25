@@ -17,7 +17,13 @@ api = Twitter(
     )
 ```
 
-No more documentation needed.
+### Serialization
+- datetime
+- Decimal
+
+### Deseralization
+- datetime
+- Decimal
 
 - Learn how Tapioca works [here](http://tapioca-wrapper.readthedocs.org/en/stable/quickstart.html)
 - Explore this package using iPython

@@ -2,14 +2,25 @@
 
 from tapioca import (
     TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
+from tapioca.serializers import SimpleSerializer
 from requests_oauthlib import OAuth1
 
 from resource_mapping import RESOURCE_MAPPING
 
 
+class TwitterSerializer(SimpleSerializer):
+
+    def to_datetime(self, data):
+        return arrow.get(data, 'ddd MMM DD HH:mm:ss Z YYYY').datetime
+
+    def serialize_datetime(self, data):
+        return arrow.get(data).format('ddd MMM DD HH:mm:ss Z YYYY')
+
+
 class TwitterClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     api_root = 'https://api.twitter.com/1.1/'
     resource_mapping = RESOURCE_MAPPING
+    serializer_class TwitterSerializer
 
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(TwitterClientAdapter, self).get_request_kwargs(

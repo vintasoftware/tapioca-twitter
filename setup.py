@@ -21,7 +21,7 @@ except (IOError, ImportError):
 
 package = 'tapioca_twitter'
 requirements = [
-    'tapioca-wrapper<0.6.0',
+    'tapioca-wrapper<2',
     'requests-oauthlib==0.4.2',
 ]
 test_requirements = [
