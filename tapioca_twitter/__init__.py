@@ -5,4 +5,4 @@ __email__ = 'filipeximenes@gmail.com'
 __version__ = '0.5.0'
 
 
-from tapioca_twitter import Twitter
+from .tapioca_twitter import Twitter

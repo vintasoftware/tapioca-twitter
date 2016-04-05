@@ -5,7 +5,7 @@ from tapioca import (
 from tapioca.serializers import SimpleSerializer
 from requests_oauthlib import OAuth1
 
-from resource_mapping import RESOURCE_MAPPING
+from .resource_mapping import RESOURCE_MAPPING
 
 
 class TwitterSerializer(SimpleSerializer):
