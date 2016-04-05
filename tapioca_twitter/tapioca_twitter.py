@@ -5,7 +5,7 @@ from tapioca import (
 from tapioca.serializers import SimpleSerializer
 from requests_oauthlib import OAuth1
 
-from resource_mapping import RESOURCE_MAPPING
+from .resource_mapping import RESOURCE_MAPPING
 
 
 class TwitterSerializer(SimpleSerializer):
@@ -20,7 +20,7 @@ class TwitterSerializer(SimpleSerializer):
 class TwitterClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     api_root = 'https://api.twitter.com/1.1/'
     resource_mapping = RESOURCE_MAPPING
-    serializer_class TwitterSerializer
+    serializer_class = TwitterSerializer
 
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(TwitterClientAdapter, self).get_request_kwargs(
