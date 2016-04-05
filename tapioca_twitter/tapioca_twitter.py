@@ -20,7 +20,7 @@ class TwitterSerializer(SimpleSerializer):
 class TwitterClientAdapter(JSONAdapterMixin, TapiocaAdapter):
     api_root = 'https://api.twitter.com/1.1/'
     resource_mapping = RESOURCE_MAPPING
-    serializer_class TwitterSerializer
+    serializer_class = TwitterSerializer
 
     def get_request_kwargs(self, api_params, *args, **kwargs):
         params = super(TwitterClientAdapter, self).get_request_kwargs(
