@@ -1,5 +1,7 @@
 # coding: utf-8
 
+import arrow
+
 from tapioca import (
     TapiocaAdapter, generate_wrapper_from_adapter, JSONAdapterMixin)
 from tapioca.serializers import SimpleSerializer
