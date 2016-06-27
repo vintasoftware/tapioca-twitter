@@ -89,9 +89,17 @@ RESOURCE_MAPPING = {
         'resource': 'friends/ids.json',
         'docs': 'https://dev.twitter.com/rest/reference/get/friends/ids'
     },
+    'friends_list': {
+        'resource': 'friends/list.json',
+        'docs': 'https://dev.twitter.com/rest/reference/get/friends/list'
+    },
     'followers_ids': {
         'resource': 'followers/ids.json',
         'docs': 'https://dev.twitter.com/rest/reference/get/followers/ids'
+    },
+    'followers_list': {
+        'resource': 'followers/list.json',
+        'docs': 'https://dev.twitter.com/rest/reference/get/followers/list'
     },
     'friendships_incoming': {
         'resource': 'friendships/incoming.json',
