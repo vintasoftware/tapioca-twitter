@@ -1,6 +1,10 @@
 # coding: utf-8
 
 RESOURCE_MAPPING = {
+    'users_search': {
+        'resource': 'users/search.json',
+        'docs': 'https://dev.twitter.com/rest/reference/get/users/search'
+    },
     'users_lookup': {
         'resource': 'users/lookup.json',
         'docs': 'https://dev.twitter.com/rest/reference/get/users/lookup'
