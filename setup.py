@@ -23,6 +23,7 @@ package = 'tapioca_twitter'
 requirements = [
     'tapioca-wrapper<2',
     'requests-oauthlib>=0.4.2',
+    'arrow>=0.8.0',
 ]
 test_requirements = [
 
