@@ -1,6 +1,10 @@
 # coding: utf-8
 
 RESOURCE_MAPPING = {
+    'configuration': {
+        'resource': 'help/configuration.json',
+        'docs': 'https://dev.twitter.com/en/docs/developer-utilities/configuration/api-reference/get-help-configuration'
+    },
     'users_search': {
         'resource': 'users/search.json',
         'docs': 'https://dev.twitter.com/rest/reference/get/users/search'
